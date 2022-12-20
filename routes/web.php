@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,19 +20,12 @@ Route::get('/empresa/{string?}', function ($string = null) {
     return $string;
 });
 
+
+
 Route::get('/', function () {
     
     return view('welcome');
 });
 
-Route::prefiz('/', function () {
-    
-    return view('welcome');
-});
 
-// TODO INTRO #4 13:53
-
-Route::get('/users/{user}', function (\App\Models\User $user) {
-    
-    return $user;
-});
+Route::get('/users/{user}', [UserController::class, 'show']);
