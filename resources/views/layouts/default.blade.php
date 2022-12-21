@@ -9,5 +9,6 @@
 <body>
   <h1>@yield('title', 'Meu Título')</h1>
   @yield('content');
+  @vite(['resources/css/app.css', 'resources/js/app.js', 'resources/css/app.scss'])
 </body>
 </html>
