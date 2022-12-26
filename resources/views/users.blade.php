@@ -8,6 +8,5 @@
 @foreach($users as $user)
   {{ $user->name }} <br>
 @endforeach
-{{-- // TODO intro #11 min 10:00 --}}
 @endsection
 
