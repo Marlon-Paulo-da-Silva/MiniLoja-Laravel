@@ -28,7 +28,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/produto/{product}', [ProductController::class, 'show'])->name('product');
+Route::get('/produto/{product:slug}', [ProductController::class, 'show'])->name('product');
 
 // admin
 Route::get('/admin/produtos', [AdminProductController::class, 'index'])->name('admin.products');
