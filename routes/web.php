@@ -32,7 +32,11 @@ Route::get('/produto/{product:slug}', [ProductController::class, 'show'])->name(
 
 // admin
 Route::get('/admin/produtos', [AdminProductController::class, 'index'])->name('admin.products');
-Route::get('/admin/produtos/editar', [AdminProductController::class, 'edit'])->name('admin.product.edit');
+Route::get('/admin/produtos/criar', [AdminProductController::class, 'create'])->name('admin.product.create');
+Route::post('/admin/produtos', [AdminProductController::class, 'store'])->name('admin.product.store');
+
+Route::get('/admin/produtos/{product}/editar', [AdminProductController::class, 'edit'])->name('admin.product.edit');
+Route::put('/admin/produtos/{product}', [AdminProductController::class, 'update'])->name('admin.product.update');
 
 // Route::get('/users/{user}', [UserController::class, 'show']);
 
