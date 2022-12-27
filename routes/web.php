@@ -26,13 +26,13 @@ use App\Http\Controllers\UserController;
 
 
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/produto', [ProductController::class, 'product']);
+Route::get('/produto/{product}', [ProductController::class, 'show'])->name('product');
 
 // admin
-Route::get('/admin/produtos', [AdminProductController::class, 'index']);
-Route::get('/admin/produtos/editar', [AdminProductController::class, 'edit']);
+Route::get('/admin/produtos', [AdminProductController::class, 'index'])->name('admin.products');
+Route::get('/admin/produtos/editar', [AdminProductController::class, 'edit'])->name('admin.product.edit');
 
 // Route::get('/users/{user}', [UserController::class, 'show']);
 
