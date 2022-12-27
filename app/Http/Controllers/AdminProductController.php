@@ -24,7 +24,7 @@ class AdminProductController extends Controller
     }
 
     // recebe a requisição para dar o update PUT
-    public function update(Request $request){
+    public function update(Product $product, Request $request){
         $input = $request->validate([
             'title' => 'string|required',
             'price' => 'string|required',
@@ -32,9 +32,6 @@ class AdminProductController extends Controller
             'cover' => 'file|nullable',
             'description' => 'string|nullable'
         ]);
-
-        // TODO #31 5:40
-        dd('edite ok');
 
         $input['slug'] = Str::slug($input['title']);
 
@@ -44,11 +41,10 @@ class AdminProductController extends Controller
             $path = $file->store('products');
             $input['cover'] = $path;
 
-            // dd($input['cover']);
         }
 
-        Product::create($input);
-
+        $product->fill($input);
+        $product->save();
         return Redirect::route('admin.products');
     }
 

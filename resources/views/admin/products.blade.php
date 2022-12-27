@@ -16,7 +16,7 @@
                     <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Nome</th>
                     <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Valor</th>
                     <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100">Estoque</th>
-                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 text-right">AÃ§Ãµes</th>
+                    <th class="px-4 py-3 title-font tracking-wider font-medium text-gray-900 text-sm bg-gray-100 text-right">Ações</th>
                 </tr>
                 </thead>
                 <tbody class="divide-y">
@@ -24,7 +24,7 @@
                     <tr @if ($loop->even) class="bg-gray-100" @endif>
                         <td class="px-4 py-3">{{ $p->id }}</td>
                         <td class="px-4 py-3">
-                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="{{ $p->cover }}">
+                            <img alt="ecommerce" class="object-cover object-center w-full h-full block" src="{{ \Illuminate\Support\Facades\Storage::url($p->cover) }}">
                         </td>
                         <td class="px-4 py-3">{{ $p->title }}</td>
                         <td class="px-4 py-3">R${{ $p->price }}</td>

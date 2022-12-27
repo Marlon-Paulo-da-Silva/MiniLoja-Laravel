@@ -8,14 +8,14 @@
                 <h1 class="text-2xl font-medium title-font mb-2 text-gray-900">Editar produto</h1>
             </div>
 
-            <form enctype="multipart/form-data" method="PUT" action="{{ route('admin.product.update', $product->id) }}">
+            <form enctype="multipart/form-data" method="POST" action="{{ route('admin.product.update', $product->id) }}">
                 @csrf
-                
+                @method('put')
                 <div class="flex flex-wrap">
                     <div class="p-2 w-1/2">
                         <div class="relative">
-                            <label for="name" class="leading-7 text-sm text-gray-600">Nome do produto</label>
-                            <input type="text" value="{{ $product->title }}" id="name" name="name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            <label for="title" class="leading-7 text-sm text-gray-600">Nome do produto</label>
+                            <input type="text" value="{{ $product->title }}" id="title" name="title" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
                         </div>
                     </div>
 
