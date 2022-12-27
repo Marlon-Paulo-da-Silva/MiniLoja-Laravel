@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Controllers\AdminProductController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -15,19 +19,21 @@ use App\Http\Controllers\UserController;
 */
 
 // rota de query opcional, colocar o ponto de interrogação
-Route::get('/empresa/{string?}', function ($string = null) {
-    echo "O nome da empresa é: <br><br>";
-    return $string;
-});
+// Route::get('/empresa/{string?}', function ($string = null) {
+//     echo "O nome da empresa é: <br><br>";
+//     return $string;
+// });
 
 
 
-Route::get('/', function () {
-    
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/produto', [ProductController::class, 'product']);
 
-Route::get('/users/{user}', [UserController::class, 'show']);
+// admin
+Route::get('/admin/produtos', [AdminProductController::class, 'index']);
+Route::get('/admin/produtos/editar', [AdminProductController::class, 'edit']);
 
-Route::get('/users', [UserController::class, 'index']);
+// Route::get('/users/{user}', [UserController::class, 'show']);
+
+// Route::get('/users', [UserController::class, 'index']);
