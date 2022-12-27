@@ -17,13 +17,39 @@ class AdminProductController extends Controller
     }
 
     // mostra a pagina de editar GET
-    public function edit(){
-        return view('admin.product_edit');
+    public function edit(Product $product){
+        return view('admin.product_edit', [
+            'product' => $product
+        ]);
     }
 
     // recebe a requisição para dar o update PUT
-    public function update(){
-        return view('admin.product_edit');
+    public function update(Request $request){
+        $input = $request->validate([
+            'title' => 'string|required',
+            'price' => 'string|required',
+            'stock' => 'integer|nullable',
+            'cover' => 'file|nullable',
+            'description' => 'string|nullable'
+        ]);
+
+        // TODO #31 5:40
+        dd('edite ok');
+
+        $input['slug'] = Str::slug($input['title']);
+
+        if(!empty($input['cover']) && $input['cover']->isValid()){
+
+            $file = $input['cover'];
+            $path = $file->store('products');
+            $input['cover'] = $path;
+
+            // dd($input['cover']);
+        }
+
+        Product::create($input);
+
+        return Redirect::route('admin.products');
     }
 
     // mostra a pagina de criar GET
