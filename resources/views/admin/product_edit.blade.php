@@ -10,7 +10,7 @@
 
             <form enctype="multipart/form-data" method="POST" action="{{ route('admin.product.update', $product->id) }}">
                 @csrf
-                @method('put')
+                @method('PUT')
                 <div class="flex flex-wrap">
                     <div class="p-2 w-1/2">
                         <div class="relative">
@@ -43,6 +43,12 @@
                         </div>
                     </div>
 
+                    @if ($product->cover)
+                        <div class="p-2 w-full">
+                            <img src="{{ \Illuminate\Support\Facades\Storage::url($product->cover) }}" alt="" srcset="">
+                            <a href="{{ route('admin.product.destroyImage', $product->id) }}">Deletar imagem</a>
+                        </div>
+                    @endif
                     <div class="p-2 w-full">
                         <div class="relative">
                             <label for="name" class="leading-7 text-sm text-gray-600">Descrição</label>
