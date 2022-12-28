@@ -16,12 +16,21 @@ Mini Loja para praticar os conceitos de CRUD utilizando a ferramenta Laravel
 - Edição e Cadastro de produtos no painel admin.
 
 
+Tela Home:
 ![](https://raw.githubusercontent.com/Marlon-Paulo-da-Silva/MiniLoja-Laravel/main/image4.png)
-
+<br>
+<br>
+Tela Cadastro de produtos
 ![](https://raw.githubusercontent.com/Marlon-Paulo-da-Silva/MiniLoja-Laravel/main/image1.png)
+<br>
+<br>
 
+Tela Edição de produtos
 ![](https://raw.githubusercontent.com/Marlon-Paulo-da-Silva/MiniLoja-Laravel/main/image2.png)
+<br>
+<br>
 
+Dashboard de produtos
 ![](https://raw.githubusercontent.com/Marlon-Paulo-da-Silva/MiniLoja-Laravel/main/image3.png)
 
 
