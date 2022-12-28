@@ -11,10 +11,16 @@
 
 Mini Loja para praticar os conceitos de CRUD utilizando a ferramenta Laravel
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Listagem de produtos na página inicial.
+- Busca de produtos na página inicial.
+- Edição e Cadastro de produtos no painel admin.
+
+
+![](https://github.com/Marlon-Paulo-da-Silva/MiniLoja-Laravel/blob/master/image1.png)
+
+![](https://github.com/Marlon-Paulo-da-Silva/MiniLoja-Laravel/blob/master/image2.png)
+
+![](https://github.com/Marlon-Paulo-da-Silva/MiniLoja-Laravel/blob/master/image3.png)
+
+![](https://github.com/Marlon-Paulo-da-Silva/MiniLoja-Laravel/blob/master/image4.png)
+
