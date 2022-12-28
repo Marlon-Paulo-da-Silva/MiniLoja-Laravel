@@ -31,6 +31,7 @@ class AdminProductController extends Controller
         
         $input = $request->validated();
 
+        // TODO #34 0:15
         $input['slug'] = Str::slug($input['title']);
 
         if(!empty($input['cover']) && $input['cover']->isValid()){
