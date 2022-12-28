@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Http\Requests\ProductStoreRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
@@ -25,16 +26,10 @@ class AdminProductController extends Controller
     }
 
     // recebe a requisição para dar o update PUT
-    public function update(Product $product, Request $request){
+    public function update(Product $product, ProductStoreRequest $request){
         // dd($product);
         
-        $input = $request->validate([
-            'title' => 'string|required',
-            'price' => 'string|required',
-            'stock' => 'integer|nullable',
-            'cover' => 'file|nullable',
-            'description' => 'string|nullable'
-        ]);
+        $input = $request->validated();
 
         $input['slug'] = Str::slug($input['title']);
 
@@ -57,14 +52,8 @@ class AdminProductController extends Controller
     }
 
     // recebe a requisição para criar POST
-    public function store(Request $request){
-        $input = $request->validate([
-            'title' => 'string|required',
-            'price' => 'string|required',
-            'stock' => 'integer|nullable',
-            'cover' => 'file|nullable',
-            'description' => 'string|nullable'
-        ]);
+    public function store(ProductStoreRequest $request){
+        $input = $request->validated();
 
         $input['slug'] = Str::slug($input['title']);
 
